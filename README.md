@@ -1,5 +1,5 @@
 # rtabmap_drone_example
-2D navigation example of a drone using [move_base](http://wiki.ros.org/move_base) with [mavros](http://wiki.ros.org/mavros)/[px4](https://github.com/PX4/PX4-Autopilot) and [rtabmap](wiki.ros.org/rtabmap_ros) visual SLAM in Jetson Xavier NX and intel realsense D435 depth camera
+2D navigation example of a drone using [move_base](http://wiki.ros.org/move_base) with [mavros](http://wiki.ros.org/mavros)/[px4](https://github.com/PX4/PX4-Autopilot) and [rtabmap](wiki.ros.org/rtabmap_ros) visual SLAM in Jetson Xavier NX + intel realsense D435 depth camera
 
 Overview video (click to watch on Youtube):
 
@@ -23,24 +23,11 @@ sudo apt install \
 # May need this on Melodic to avoid error about silt_gazebo 
 # and gstreamer (https://github.com/PX4/PX4-Autopilot/issues/13117):
 sudo apt-get install libgstreamer-plugins-base1.0-dev
-   
+sudo pip3 install numpy toml packaging jinja2 empy numpy
 # If rtabmap is not already built from source:
 sudo apt install ros-$ROS_DISTRO-rtabmap-ros
 ```
 
-### PX4 v1.12.3
-```bash
-cd ~
-git clone https://github.com/PX4/PX4-Autopilot.git
-cd PX4-Autopilot
-git checkout v1.12.3
-git submodule update --init --recursive
-sudo pip3 install numpy toml packaging jinja2 empy numpy
-make px4_sitl_default gazebo
-# (do ctrl-c in terminal to close gazebo)
-echo "source ~/PX4-Autopilot/Tools/setup_gazebo.bash ~/PX4-Autopilot ~/PX4-Autopilot/build/px4_sitl_default" >> ~/.bashrc
-echo "export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot:~/PX4-Autopilot/Tools/sitl_gazebo" >> ~/.bashrc
-source ~/.bashrc
 
 cd ~/catkin_ws/src
 # To work with PX4/Firmware 1.12.3, mavros 1.8.0 or 1.9.0 releases should be used
