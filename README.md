@@ -25,7 +25,7 @@ sudo apt-get install libgstreamer-plugins-base1.0-dev
    
 # If rtabmap is not already built from source:
 sudo apt install ros-$ROS_DISTRO-rtabmap-ros
-
+sudo apt install ros-$ROS_DISTRO-rtabmap
 
 
 ```
