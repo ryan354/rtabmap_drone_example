@@ -20,7 +20,6 @@ sudo apt install \
    geographiclib-tools \
    libgstreamer1.0-dev
 sudo pip3 install numpy toml packaging jinja2 empy numpy
-# May need this on Melodic to avoid error about silt_gazebo 
 # and gstreamer (https://github.com/PX4/PX4-Autopilot/issues/13117):
 sudo apt-get install libgstreamer-plugins-base1.0-dev
    
